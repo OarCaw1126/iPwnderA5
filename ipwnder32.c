@@ -110,6 +110,7 @@ const char* n49 = "iPhone5,4";
 const char* p101 = "iPad3,4";
 const char* p102 = "iPad3,5";
 const char* p103 = "iPad3,6";
+const char* p105 = "iPad2,5";
 
 #ifndef IPHONEOS_ARM
 const char *n41_ibss = "image3/ibss.n41";
@@ -119,6 +120,7 @@ const char *n49_ibss = "image3/ibss.n49";
 const char *p101_ibss = "image3/ibss.p101";
 const char *p102_ibss = "image3/ibss.p102";
 const char *p103_ibss = "image3/ibss.p103";
+const char *p105_ibss = "image3/ibss.p105";
 #ifdef HAVE_HOOKER
 const char *n42_ibecX = "image3/ibecX.n42";
 #endif
@@ -130,6 +132,7 @@ const char *n49_ibss = "/var/mobile/image3/ibss.n49";
 const char *p101_ibss = "/var/mobile/image3/ibss.p101";
 const char *p102_ibss = "/var/mobile/image3/ibss.p102";
 const char *p103_ibss = "/var/mobile/image3/ibss.p103";
+const char *p105_ibss = "/var/mobile/image3/ibss.p105";
 #ifdef HAVE_HOOKER
 const char *n42_ibecX = "/var/mobile/image3/ibecX.n42";
 #endif
@@ -221,6 +224,7 @@ static void usage(char** argv) {
     printf("\t\t\t  \x1b[36ms5l8920x\x1b[39m - \x1b[31mlimera1n\x1b[39m\n");
     printf("\t\t\t  \x1b[36ms5l8922x\x1b[39m - \x1b[31mlimera1n\x1b[39m\n");
     printf("\t\t\t  \x1b[36ms5l8930x\x1b[39m - \x1b[31mlimera1n\x1b[39m\n");
+    printf("\t\t\t  \x1b[36ms5l8942x\x1b[39m - \x1b[31mcheckm8\x1b[39m\n");
     printf("\t\t\t  \x1b[36ms5l895Xx\x1b[39m - \x1b[35mcheckm8\x1b[39m\n");
     printf("\t\t\t  \x1b[36ms5l8960x\x1b[39m - \x1b[35mcheckm8\x1b[39m\n");
     printf("\t\t\t[Additional flag]\n");
