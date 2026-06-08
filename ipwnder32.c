@@ -200,6 +200,14 @@ static int init_dl(){
         path = "AssetData/boot/Firmware/dfu/iBSS.p103ap.RELEASE.dfu";
         if(dl_file(url, path, realpath) != 0) return -1;
     }
+
+    realpath = p105_ibss;
+    fd = fopen(realpath, "r");
+    if(!fd){
+        url = "https://drive.usercontent.google.com/uc?id=1MVv6OaXPl_vq6XKroU7QX2mqpYAwYUiZ&export=download";
+        path = "dfu/iBSS.p105ap.RELEASE.dfu";
+        if(dl_file(url, path, realpath) != 0) return -1;
+    }
     
 #ifdef HAVE_HOOKER
     realpath = n42_ibecX;
@@ -458,6 +466,10 @@ int main(int argc, char** argv) {
         if(device->product_type == p103){
             path = p103_ibss;
         }
+
+        if(device->product_type == p105){
+            path = p105_ibss;
+        }
         
         if(!path){
             printf("\x1b[31mERROR: This device is not supported.\x1b[39m\n");
@@ -509,7 +521,7 @@ int main(int argc, char** argv) {
     
     
 #ifdef HAVE_HOOKER
-    if(TBX == 1 && (devinfo->cpid|0xf) == (0x8950|0xf)){
+    if(TBX == 1 && (devinfo->cpid|0xf) == (0x8942|0xf)){
         client = NULL;
         usleep(1000);
         irecv_open_with_ecid_and_attempts(&client, 0, 10);
